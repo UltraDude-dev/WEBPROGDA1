@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riviera Event Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        /* Main Navigation Bar */
+        .main-nav {
+            background-color: #1a252f;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+        }
+        
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+        
+        .main-nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .main-nav ul li a:hover {
+            background-color: #3498db;
+        }
+        
+        .main-nav ul li a.active {
+            background-color: #667eea;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+        }
+        
+        .event-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 700px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        /* Form Container */
+        .form-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .form-container h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+        
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+            color: #2c3e50;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            padding: 0.7rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: Arial, sans-serif;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        
+        /* Radio and Checkbox Groups */
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .radio-group label,
+        .checkbox-group label {
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+            cursor: pointer;
+        }
+        
+        /* Event Information Box */
+        .event-info {
+            background-color: #ecf0f1;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        
+        .event-info h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-info ul {
+            margin-left: 1.5rem;
+        }
+        
+        .event-info li {
+            margin-bottom: 0.3rem;
+        }
+        
+        /* Buttons */
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        button {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn {
+            background-color: #667eea;
+            color: white;
+            flex: 1;
+        }
+        
+        .submit-btn:hover {
+            background-color: #5568d3;
+        }
+        
+        .reset-btn {
+            background-color: #95a5a6;
+            color: white;
+            flex: 1;
+        }
+        
+        .reset-btn:hover {
+            background-color: #7f8c8d;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Navigation Bar -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="timetable.html">Time Table</a></li>
+            <li><a href="registration.html" class="active">Registration Form</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <img src="/Users/adi/Desktop/projects/WebProg_24bce0397_DA1/riv2.jpeg" alt="Riviera Logo" class="event-logo">
+        <h1>Riviera Event Registration</h1>
+        <p>VIT University's Annual Cultural Fest</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="form-container">
+            <!-- Event Information -->
+            <div class="event-info">
+                <h3>About Riviera 2026</h3>
+                <ul>
+                    <li>Date: February 14-16, 2026</li>
+                    <li>Venue: VIT University, Vellore</li>
+                    <li>Registration Fee: ₹500 per person</li>
+                    <li>Multiple events across music, dance, drama, and technical categories</li>
+                </ul>
+            </div>
+
+            <h2>Registration Form</h2>
+            
+            <form>
+                <!-- Personal Information -->
+                <div class="form-group">
+                    <label for="fullname">Full Name *</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+91 1234567890" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth *</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender *</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="gender" value="male" required>
+                            Male
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="female">
+                            Female
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="other">
+                            Other
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Academic Information -->
+                <div class="form-group">
+                    <label for="college">College/University *</label>
+                    <input type="text" id="college" name="college" placeholder="Enter your college name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="regno">Registration Number</label>
+                    <input type="text" id="regno" name="regno" placeholder="Your college registration number">
+                </div>
+
+                <div class="form-group">
+                    <label for="year">Year of Study *</label>
+                    <select id="year" name="year" required>
+                        <option value="">-- Select Year --</option>
+                        <option value="1">First Year</option>
+                        <option value="2">Second Year</option>
+                        <option value="3">Third Year</option>
+                        <option value="4">Fourth Year</option>
+                        <option value="5">Fifth Year</option>
+                    </select>
+                </div>
+
+                <!-- Event Selection -->
+                <div class="form-group">
+                    <label for="category">Event Category *</label>
+                    <select id="category" name="category" required>
+                        <option value="">-- Select Category --</option>
+                        <option value="music">Music</option>
+                        <option value="dance">Dance</option>
+                        <option value="drama">Drama & Theatre</option>
+                        <option value="technical">Technical Events</option>
+                        <option value="literary">Literary Events</option>
+                        <option value="sports">Sports</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Select Events (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="events" value="solo-singing">
+                            Solo Singing
+                        </label>
+                        <label>
+                            <input type="checkbox" name="events" value="group-dance">
+                            Group Dance
+                        </label>
+                        <label>
+                            <input type="checkbox" name="events" value="street-play">
+                            Street Play
+                        </label>
+                        <label>
+                            <input type="checkbox" name="events" value="coding">
+                            Coding Competition
+                        </label>
+                        <label>
+                            <input type="checkbox" name="events" value="debate">
+                            Debate
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="teamsize">Team Size</label>
+                    <input type="number" id="teamsize" name="teamsize" min="1" max="10" placeholder="Number of team members">
+                </div>
+
+                <!-- Additional Information -->
+                <div class="form-group">
+                    <label for="tshirt">T-Shirt Size *</label>
+                    <select id="tshirt" name="tshirt" required>
+                        <option value="">-- Select Size --</option>
+                        <option value="xs">XS</option>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                        <option value="xxl">XXL</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="accommodation">Accommodation Required?</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="accommodation" value="yes">
+                            Yes
+                        </label>
+                        <label>
+                            <input type="radio" name="accommodation" value="no" checked>
+                            No
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="comments">Additional Comments/Special Requirements</label>
+                    <textarea id="comments" name="comments" placeholder="Any special requirements or comments..."></textarea>
+                </div>
+
+                <!-- Submit Buttons -->
+                <div class="button-group">
+                    <button type="submit" class="submit-btn">Register Now</button>
+                    <button type="reset" class="reset-btn">Clear Form</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Riviera - VIT University. All rights reserved.</p>
+        <p>For queries, contact: <a href="mailto:riviera@vit.ac.in">riviera@vit.ac.in</a> | <a href="resume.html">Back to Resume</a></p>
+    </footer>
+</body>
+</html>
