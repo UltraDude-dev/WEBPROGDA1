@@ -4,160 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Resume</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        /* Top Navigation Bar for Main Pages */
-        .main-nav {
-            background-color: #1a252f;
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 200;
-        }
-        
-        .main-nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-        }
-        
-        .main-nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-        
-        .main-nav ul li a:hover {
-            background-color: #3498db;
-        }
-        
-        .main-nav ul li a.active {
-            background-color: #667eea;
-        }
-        
-        /* Secondary Navigation Bar for Resume Sections */
-        .section-nav {
-            background-color: #2c3e50;
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .section-nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .section-nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        
-        .section-nav ul li a:hover {
-            color: #3498db;
-        }
-        
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 3rem 2rem;
-        }
-        
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        header p {
-            font-size: 1.2rem;
-        }
-        
-        /* Main Content */
-        main {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-        }
-        
-        section {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        section h2 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 0.5rem;
-        }
-        
-        /* Profile Image */
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            display: block;
-            margin: 1rem auto;
-            border: 4px solid white;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-        }
-        
-        /* Lists */
-        ul, ol {
-            margin-left: 2rem;
-            margin-top: 0.5rem;
-        }
-        
-        li {
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        footer a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Main Navigation Bar (Top) -->
+    <!-- Main Navigation Bar  -->
     <nav class="main-nav">
         <ul>
             <li><a href="resume.html" class="active">Resume</a></li>
@@ -166,7 +16,7 @@
         </ul>
     </nav>
 
-    <!-- Section Navigation Bar (Secondary) -->
+    <!-- Section Navigation Bar for resume ) -->
     <nav class="section-nav">
         <ul>
             <li><a href="#about">About</a></li>
@@ -179,8 +29,8 @@
 
     <!-- Header Section -->
     <header>
-        <img src="./images/vitlogo.svg.png" alt="Profile Picture" class="profile-img">
-        <h1>Aditya Aryan Singh</h1>
+        <img src="images/vitlogo.svg.png" alt="Profile Picture" class="profile-img">
+        <h1>Aditya Singh</h1>
         <p>Computer Science Student | Web Developer</p>
     </header>
 
@@ -207,7 +57,7 @@
                 </li>
                 <li>
                     <strong>Higher Secondary Education</strong><br>
-                    Podar International <br>
+                   Podar international<br>
                     Year: 2023
                 </li>
             </ul>
@@ -248,8 +98,10 @@
         <section id="contact">
             <h2>Contact Information</h2>
             <ul>
-                <li><strong>Email:</strong> <a href="mailto:yourname@example.com">aditya.aryansingh2024@vit.student.ac.in</a></li>
-                
+                <li><strong>Email:</strong> <a href="mailto:yourname@example.com">yourname@example.com</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
+                <li><strong>Location:</strong> Bengaluru, Karnataka, India</li>
             </ul>
         </section>
     </main>
